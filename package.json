@@ -18,5 +18,6 @@
         "eslint": "^7.8.1",
         "jsdoc": "^3.6.5",
         "jsdoc-to-markdown": "^6.0.1"
-    }
+    },
+    "dependencies": {}
 }
