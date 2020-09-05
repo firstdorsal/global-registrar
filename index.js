@@ -18,7 +18,20 @@
 * @prop {String} phone The registrants phone number
 
 * @example
-
+    {
+        email: "mail@example.com",
+        lastName: "Doe",
+        firstName: "John",
+        registrantType: 0,
+        country: "Deutschland",
+        countryCode: "DE",
+        state: "Bayern",
+        city: "Augsburg",
+        zip: "86150",
+        street: "Musterstraße",
+        houseNumber: "42",
+        phone: '+491234567890'
+    }
 */
 
 
