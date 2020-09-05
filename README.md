@@ -2,7 +2,45 @@
 ```
 npm i global-registrar
 ```
+# Basic Example
+```js
+(async () => {
+    //get global variables
+    require('dotenv').config();
 
+    const {
+        GlobalRegistrar
+    } = require('global-registrar');
+    const gr = new GlobalRegistrar({
+        pluginName: 'global-registrar-plugin-gandi',
+        pluginData: {
+            apikey: process.env.GANDI_API_KEY
+        }
+    });
+    console.log(await gr.listAvailableTLD());
+})();
+
+```
+## What is dotenv?
+The line "require('dotenv').config();" gets the contents of a file called ".env" in which you should store your global and secret variables.
+
+### 1. Install the module "dotenv" with
+```
+npm i dotenv
+```
+### 2. Create a file named ".env" in your applications root directory
+
+*.env*
+```c
+GANDI_API_KEY='YOUR GANDI API KEY'
+```
+### 3. Use your secret variables 
+```
+process.env.GANDI_API_KEY
+```
+
+# Need help or missing a feature?
+Feel free to contact me via [xl9jthv_7bvgakv9o9wg0jabn2ylm91xxrzzgt0e@firstdorsal.eu](mailto:xl9jthv_7bvgakv9o9wg0jabn2ylm91xxrzzgt0e@firstdorsal.eu) in english or german
 
 
 
