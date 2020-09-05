@@ -20,8 +20,8 @@
 * @example
     {
         email: "mail@example.com",
-        lastName: "Doe",
-        firstName: "John",
+        lastName: "Müller",
+        firstName: "Karl",
         registrantType: 0,
         country: "Deutschland",
         countryCode: "DE",
@@ -34,46 +34,142 @@
     }
 */
 
+/** @module global-registrar */
+/** 
+ * @class Class representing the global registrar
+ *@example 
+(async () => {
+    //get global variables
+    require('dotenv').config();
 
+    const {
+        GlobalRegistrar
+    } = require('global-registrar');
+    const gr = new GlobalRegistrar({
+        pluginName: 'global-registrar-plugin-gandi',
+        pluginData: {
+            apikey: process.env.GANDI_API_KEY
+        }
+    });
+    console.log(await gr.listAvailableTLD());
+})();
+*/
 module.exports.GlobalRegistrar = class {
-
+    /**
+     * Create a global registrar client
+     * @constructor
+     * @param {Object} plugin a plugin object with its name and required data
+     * @example
+     * const gr = new GlobalRegistrar({
+        pluginName: 'global-registrar-plugin-gandi',
+        pluginData: {
+            apikey: process.env.GANDI_API_KEY
+        }
+        });
+     */
     constructor(plugin) {
         const Plugin = require(plugin.pluginName);
         this.plugin = new Plugin(plugin.pluginData);
     }
+    /**
+     * Retrieves list of available tld names. Must return array with all available tld endings and nothing else.
+     * @returns {Array} Array of top level domains
+     * @example
+     await gr.listAvailableTLD()
+     */
+    listAvailableTLD() {
+        return this.plugin.listAvailableTLD();
+    }
+    /**
+     * Checks if domain is publicly available for registration at the registrar. Takes domain name as string. Has to return true if domain is available and false if not. Null will be returned if the check couldnt be performed or an error occurs.
+     * @param {String} domain The domain you want to check for
+     * @returns {Boolean} True if domain is available for registration
+     * @example
+     await gr.checkAvailability('example.com')
+     */
+    checkAvailability(domain) {
+        return this.plugin.checkAvailability(domain);
+    }
+    /**
+     * Checks if domain is publicly available for registration at the registrar. Takes domain name as string. Returns the pricing information from the registrar or false if domain is not available for registration
+     * @param {String} domain The domain you want to check for
+     * @param {String} currency The currency for which the price should be returned. Has to be ISO currency code.
+     * @returns {Object|Boolean} Pricing information, false or null
+     * @example
+     await gr.checkPrice('paulisttoll.eu', 'EUR')
+     */
+    checkPrice(domain, currency) {
+        return this.plugin.checkPrice(domain, currency);
+        //TODO: pricing is not normed!
+    }
+
+    /**
+     * Registers a domain
+     * @param {String} domain The domain you want to register
+     * @param {Number} duration The duration to register the domain for in years.
+     * @param {Registrant} registrant A Registrant object with information about the registrant must be provided
+     * @returns {Boolean}
+     * @example
+     await gr.registerDomain("paulisttoll.eu", 1, {
+        email: "mail@example.com",
+        lastName: "Müller",
+        firstName: "Karl",
+        registrantType: 0,
+        country: "Deutschland",
+        countryCode: "DE",
+        state: "Bayern",
+        city: "Augsburg",
+        zip: "86150",
+        street: "Musterstraße",
+        houseNumber: "42",
+        phone: '+491234567890'
+    })
+     */
+    registerDomain(domain, duration, registrant) {
+        return this.plugin.registerDomain(domain, duration, registrant);
+    }
+    /**
+     * Renews a domain.
+     * @param {String} domain The domain you want to renew
+     * @param {Number}  duration The duration to renew the domain for in years.
+     * @returns {Boolean} 
+     * @example
+        await gr.renewDomain("paulisttoll.eu", 2)
+        //will prolong the registration of the domain paulisttoll.eu by 2 years
+     */
+    renewDomain(domain, duration) {
+        return this.plugin.renewDomain(domain, duration);
+    }
+    /**
+     * Gives back information about the registration of a domain
+     * @param {String} domain The domain you want to get information about
+     * @returns {Object} information about the domain
+     * @example
+        await gr.getDomainInfo('paulisttoll.eu')
+     */
+    getDomainInfo(domain) {
+        return this.plugin.getDomainInfo(domain);
+    }
+    /**
+     * Sets the nameservers for a domain
+     * @param {String} domain The domain you want to set the nameservers for
+     * @param {Array} nameservers Array with the domain names of all nameservers
+     * @returns {Boolean} true on success
+     * @example
+        await gr.setNameServers('paulisttoll.eu',["tick.y.gy","trick.y.gy","track.y.gy"])
+     */
+    setNameServers(domain, nameservers) {
+        return this.plugin.setNameServers(domain, nameservers);
+    }
 
 
-    listAvailableTLD(...args) {
-        return this.plugin.listAvailableTLD(...args);
-    } //retrieves list of available tld names with basic pricing information must return array if all available tld endings and nothing else
 
-    checkAvailability(...args) {
-        return this.plugin.checkAvailability(...args);
-    } //checks if domain is publicly available; takes domain name as string has to return true if domain is available; false if not; null if check couldnt be performed and log error
 
-    checkPrice(...args) {
-        return this.plugin.checkPrice(...args);
-    } //checks availability and price for a specific domain name provided as string; returns object with price on success; returns false if domain ist not available; returns null and logs error if something failed
 
-    registerDomain(...args) {
-        return this.plugin.registerDomain(...args);
-    } //registers a domain takes domain name as string; takes information about the registrant as Registrant object returns true on success 
-
-    renewDomain(...args) {
-        return this.plugin.renewDomain(...args);
-    } //renews a domain at the present registrar; takes the domain and the duration in years; returns true on success
 
     transferDomain(...args) {
         return this.plugin.transferDomain(...args);
     } //transfer domain from one registrar to another
-
-    getDomainInfo(...args) {
-        return this.plugin.getDomainInfo(...args);
-    } //gets the information about a domain: is registered? where? what price? nameservers? etc.
-
-    setNameServers(...args) {
-        return this.plugin.setNameServers(...args);
-    } //sets name server for domain takes domain name and array of name servers to apply 
 
     setDNSSEC(...args) {
         return this.plugin.setDNSSEC(...args);
