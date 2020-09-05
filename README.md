@@ -8,15 +8,20 @@ npm i global-registrar
     //get global variables
     require('dotenv').config();
 
+    //import the module
     const {
         GlobalRegistrar
     } = require('global-registrar');
+
+    //create a registrar using  the gandi plugin
     const gr = new GlobalRegistrar({
         pluginName: 'global-registrar-plugin-gandi',
         pluginData: {
             apikey: process.env.GANDI_API_KEY
         }
     });
+
+    //get list of all available tld at gandi
     console.log(await gr.listAvailableTLD());
 })();
 
