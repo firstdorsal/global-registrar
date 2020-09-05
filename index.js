@@ -48,12 +48,12 @@ module.exports.GlobalRegistrar = class {
 
     renewDomain(...args) {
         return this.plugin.renewDomain(...args);
-    } //renews a domain at the present registrar
-    /*
-        transferDomain(...args) {
-            return this.plugin.transferDomain(...args);
-        } //transfer domain from one registrar to another
-    */
+    } //renews a domain at the present registrar; takes the domain and the duration in years; returns true on success
+
+    transferDomain(...args) {
+        return this.plugin.transferDomain(...args);
+    } //transfer domain from one registrar to another
+
     getDomainInfo(...args) {
         return this.plugin.getDomainInfo(...args);
     } //gets the information about a domain: is registered? where? what price? nameservers? etc.
@@ -61,7 +61,9 @@ module.exports.GlobalRegistrar = class {
     setNameServers(...args) {
         return this.plugin.setNameServers(...args);
     } //sets name server for domain takes domain name and array of name servers to apply 
+
     setDNSSEC(...args) {
         return this.plugin.setDNSSEC(...args);
-    } //sets dnssec parameters at registrar 
+    } //sets dnssec parameters at registrar
+
 }
