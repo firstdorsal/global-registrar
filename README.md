@@ -8,15 +8,20 @@ The goal of global-registrar is to create an easy reusable interface for multipl
 
 The plugins for the different APIs shall recreate the same effects with the same functions.
 
+Look at the plugins pages to see what data needs to be provided.
+
 # Supported APIs
 
 Gandi - [global-registrar-plugin-gandi](https://www.npmjs.com/package/global-registrar-plugin-gandi)
 
-- Missing **setDNSSEC()**  *Not supported by Gandi*
+- Missing 
+    - **setDNSSEC()**  *Not supported by Gandi*
+- Provide following plugin data:
+    -  **apikey**
 
 **Feel free to create your own and get it listed here!**
 
-You can also search for "global-registrar-plugin" on npm.
+You can also search for "global-registrar-plugin" on npm or click [here](https://www.npmjs.com/search?q=global-registrar-plugin).
 
 
 # Basic Example
