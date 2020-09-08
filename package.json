@@ -1,7 +1,7 @@
 {
     "name": "global-registrar",
-    "version": "0.0.4",
-    "description": "",
+    "version": "0.1.1",
+    "description": "Easy access to multiple registrar APIs.",
     "main": "index.js",
     "scripts": {
         "makedoc": "./generateDoc.sh"
