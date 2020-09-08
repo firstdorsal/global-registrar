@@ -12,12 +12,22 @@ Look at the plugins pages to see what data needs to be provided.
 
 # Supported APIs
 
-Gandi - [global-registrar-plugin-gandi](https://www.npmjs.com/package/global-registrar-plugin-gandi)
+**Gandi** - [global-registrar-plugin-gandi](https://www.npmjs.com/package/global-registrar-plugin-gandi)
 
 - Missing 
     - **setDNSSEC()**  *Not supported by Gandi*
 - Provide following plugin data:
     -  **apikey**
+
+**Godaddy** - [global-registrar-plugin-gandi](https://www.npmjs.com/package/global-registrar-plugin-godaddy)
+- Missing 
+    - **registerDomain()**  *Not implemented: overcomplicated*
+    - **setDNSSEC()**  *Not supported by Godaddy*
+- Provide following plugin data:
+    - **apikey**
+    - **apisecret**
+
+
 
 **Feel free to create your own and get it listed here!**
 
