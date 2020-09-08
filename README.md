@@ -4,15 +4,23 @@ npm i global-registrar
 ```
 
 # Description
-The goal of global-registrar is to create an easy reusable interface for multiple registrar APIs.
-Most registrar APIs are poorly documented and/or difficult to access.
+The goal of global-registrar is to create an easy reusable interface for multiple registrar APIs as most registrar APIs are poorly documented and/or difficult to access. 
+
+The plugins for the different APIs shall recreate the same effects with the same functions.
 
 # Supported APIs
 
-Gandi [global-registrar-plugin-gandi](https://www.npmjs.com/package/global-registrar-plugin-gandi)
-    - Missing setDNSSEC - Not supported by Gandi
+Gandi - [global-registrar-plugin-gandi](https://www.npmjs.com/package/global-registrar-plugin-gandi)
+
+- Missing **setDNSSEC()**  *Not supported by Gandi*
+
+**Feel free to create your own and get it listed here!**
+
+You can also search for "global-registrar-plugin" on npm.
+
 
 # Basic Example
+*test.js*
 ```js
 (async () => {
     //get global variables
