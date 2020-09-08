@@ -93,14 +93,12 @@ module.exports.GlobalRegistrar = class {
     /**
      * Checks if domain is publicly available for registration at the registrar. Takes domain name as string. Returns the pricing information from the registrar or false if domain is not available for registration
      * @param {String} domain The domain you want to check for
-     * @param {String} currency The currency for which the price should be returned. Has to be ISO currency code.
-     * @returns {Object|Boolean} Pricing information, false or null
+     * @returns {Number|Boolean} price in USD for one year without taxes, false or null
      * @example
-     await gr.checkPrice('paulisttoll.eu', 'EUR')
+     await gr.checkPrice('paulisttoll.eu')
      */
-    checkPrice(domain, currency) {
-        return this.plugin.checkPrice(domain, currency);
-        //TODO: pricing is not normed!
+    checkPrice(domain) {
+        return this.plugin.checkPrice(domain);
     }
 
     /**
