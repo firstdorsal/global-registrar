@@ -2,6 +2,16 @@
 ```
 npm i global-registrar
 ```
+
+# Description
+The goal of global-registrar is to create an easy reusable interface for multiple registrar APIs.
+Most registrar APIs are poorly documented and/or difficult to access.
+
+# Supported APIs
+
+Gandi [global-registrar-plugin-gandi](https://www.npmjs.com/package/global-registrar-plugin-gandi)
+    - Missing setDNSSEC - Not supported by Gandi
+
 # Basic Example
 ```js
 (async () => {
@@ -79,7 +89,7 @@ Feel free to contact me via [xl9jthv_7bvgakv9o9wg0jabn2ylm91xxrzzgt0e@firstdorsa
         * [new module.exports.GlobalRegistrar(plugin)](#new_module_global-registrar.GlobalRegistrar_new)
         * [.listAvailableTLD()](#module_global-registrar.GlobalRegistrar+listAvailableTLD) ⇒ <code>Array</code>
         * [.checkAvailability(domain)](#module_global-registrar.GlobalRegistrar+checkAvailability) ⇒ <code>Boolean</code>
-        * [.checkPrice(domain, currency)](#module_global-registrar.GlobalRegistrar+checkPrice) ⇒ <code>Object</code> \| <code>Boolean</code>
+        * [.checkPrice(domain)](#module_global-registrar.GlobalRegistrar+checkPrice) ⇒ <code>Number</code> \| <code>Boolean</code>
         * [.registerDomain(domain, duration, registrant)](#module_global-registrar.GlobalRegistrar+registerDomain) ⇒ <code>Boolean</code>
         * [.renewDomain(domain, duration)](#module_global-registrar.GlobalRegistrar+renewDomain) ⇒ <code>Boolean</code>
         * [.getDomainInfo(domain)](#module_global-registrar.GlobalRegistrar+getDomainInfo) ⇒ <code>Object</code>
@@ -96,7 +106,7 @@ Class representing the global registrar
     * [new module.exports.GlobalRegistrar(plugin)](#new_module_global-registrar.GlobalRegistrar_new)
     * [.listAvailableTLD()](#module_global-registrar.GlobalRegistrar+listAvailableTLD) ⇒ <code>Array</code>
     * [.checkAvailability(domain)](#module_global-registrar.GlobalRegistrar+checkAvailability) ⇒ <code>Boolean</code>
-    * [.checkPrice(domain, currency)](#module_global-registrar.GlobalRegistrar+checkPrice) ⇒ <code>Object</code> \| <code>Boolean</code>
+    * [.checkPrice(domain)](#module_global-registrar.GlobalRegistrar+checkPrice) ⇒ <code>Number</code> \| <code>Boolean</code>
     * [.registerDomain(domain, duration, registrant)](#module_global-registrar.GlobalRegistrar+registerDomain) ⇒ <code>Boolean</code>
     * [.renewDomain(domain, duration)](#module_global-registrar.GlobalRegistrar+renewDomain) ⇒ <code>Boolean</code>
     * [.getDomainInfo(domain)](#module_global-registrar.GlobalRegistrar+getDomainInfo) ⇒ <code>Object</code>
@@ -150,20 +160,19 @@ await gr.checkAvailability('example.com')
 ```
 <a name="module_global-registrar.GlobalRegistrar+checkPrice"></a>
 
-#### globalRegistrar.checkPrice(domain, currency) ⇒ <code>Object</code> \| <code>Boolean</code>
+#### globalRegistrar.checkPrice(domain) ⇒ <code>Number</code> \| <code>Boolean</code>
 Checks if domain is publicly available for registration at the registrar. Takes domain name as string. Returns the pricing information from the registrar or false if domain is not available for registration
 
 **Kind**: instance method of [<code>GlobalRegistrar</code>](#module_global-registrar.GlobalRegistrar)  
-**Returns**: <code>Object</code> \| <code>Boolean</code> - Pricing information, false or null  
+**Returns**: <code>Number</code> \| <code>Boolean</code> - price in USD for one year without taxes, false or null  
 
 | Param | Type | Description |
 | --- | --- | --- |
 | domain | <code>String</code> | The domain you want to check for |
-| currency | <code>String</code> | The currency for which the price should be returned. Has to be ISO currency code. |
 
 **Example**  
 ```js
-await gr.checkPrice('paulisttoll.eu', 'EUR')
+await gr.checkPrice('paulisttoll.eu')
 ```
 <a name="module_global-registrar.GlobalRegistrar+registerDomain"></a>
 
