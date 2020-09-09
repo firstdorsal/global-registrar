@@ -1,6 +1,23 @@
 "use strict";
 
 /**
+* Object representing the dnssec data
+* @typedef Dnssec
+* @type {Object}
+* @prop {Number} keyTag
+* @prop {Number} algorithm
+* @prop {Number} digestType
+* @prop {String} digest
+* @example
+{
+    "keyTag": 30909,
+    "algorithm": 8,
+    "digestType": 2,
+    "digest": "E2D3C916F6DEEAC73294E8268FB5885044A833FC5459588F4A9184CFC41A5766"
+}
+*/
+
+/**
 * Object representing a registrant
 * @typedef Registrant
 * @type {Object}
@@ -161,16 +178,21 @@ module.exports.GlobalRegistrar = class {
     }
 
 
-
-
-
-
-    transferDomain(...args) {
-        return this.plugin.transferDomain(...args);
-    } //transfer domain from one registrar to another
-
-    setDNSSEC(...args) {
-        return this.plugin.setDNSSEC(...args);
-    } //sets dnssec parameters at registrar
+    /**
+     * Sets the dnssec parameters for a domain at the registrar
+     * @param {String} domain The domain you want to set the nameservers for
+     * @param {Dnssec} dnssec Dnssec object with the dnssec parameters
+     * @returns {Boolean} true on success
+     * @example
+        await gr.setNameServers('paulisttoll.eu',{
+    "keyTag": 30909,
+    "algorithm": 8,
+    "digestType": 2,
+    "digest": "E2D3C916F6DEEAC73294E8268FB5885044A833FC5459588F4A9184CFC41A5766"
+})
+     */
+    setDNSSEC(domain, dnssec) {
+        return this.plugin.setDNSSEC(domain, dnssec);
+    }
 
 }

@@ -11,6 +11,13 @@ The plugins for the different APIs shall recreate the same effects with the same
 Look at the plugins pages to see what data needs to be provided.
 
 # Supported APIs
+**name<span>.</span>com** - [global-registrar-plugin-gandi](https://www.npmjs.com/package/global-registrar-plugin-namecom)
+
+- Missing 
+    - **listAvailableTLD()**  *Not supported by name<span>.</span>com*
+- Provide following plugin data:
+    - **apiToken**
+    - **apiUsername**
 
 **Gandi** - [global-registrar-plugin-gandi](https://www.npmjs.com/package/global-registrar-plugin-gandi)
 
@@ -46,16 +53,17 @@ You can also search for "global-registrar-plugin" on npm or click [here](https:/
         GlobalRegistrar
     } = require('global-registrar');
 
-    //create a registrar using  the gandi plugin
+    //create a registrar using  the name.com plugin
     const gr = new GlobalRegistrar({
-        pluginName: 'global-registrar-plugin-gandi',
+        pluginName: 'global-registrar-plugin-namecom',
         pluginData: {
-            apikey: process.env.GANDI_API_KEY
+            apiToken: process.env.NAMECOM_API_TOKEN,
+            apiUsername: process.env.NAMECOM_API_USERNAME,
         }
     });
 
-    //get list of all available tld at gandi
-    console.log(await gr.listAvailableTLD());
+    //check if a domain is available for registration at name.com
+    console.log(await gr.checkAvailability('example.com'));
 })();
 
 ```
@@ -70,12 +78,49 @@ npm i dotenv
 
 *.env*
 ```c
-GANDI_API_KEY='YOUR GANDI API KEY'
+NAMECOM_API_TOKEN='YOUR NAMECOM API KEY'
+NAMECOM_API_USERNAME='YOUR NAMECOM API USERNAME'
 ```
 ### 3. Use your secret variables 
 ```
-process.env.GANDI_API_KEY
+process.env.NAMECOM_API_TOKEN
+process.env.NAMECOM_API_USERNAME
 ```
+
+# Create your own
+You can use this template:
+[global-registrar-plugin](https://git.firstdorsal.eu/firstdorsal/global-registrar-plugin)
+
+**1** - To get started create a folder named 'global-registrar-plugin-YOUR SERVICE NAME' and navigate inside it
+
+**2** - Clone the repository by using this command (**WITH THE DOT AT THE END**)
+```bash
+git clone http://git.firstdorsal.eu/firstdorsal/global-registrar-plugin.git .
+```
+
+**3** - If you have bash installed run: 
+
+```bash
+bash initGlobalRegistrarPlugin.sh 
+```
+
+If not: replace the string PLUGINNAME manually with the name of your service in the README<span>.</span>md and package.json
+
+**4** - Replace the author field with your name
+
+**4.1** - Replace the repository url with your own git repository url 
+
+**4.1** - Remove the "Need help or missing a feature part" from the README or replace it with you own contact details
+
+**5** - Create your plugin 
+
+**6** - To get you plugin listed here
+
+Check if all functions produce the effects required by the [documentation](https://firstdorsal.eu/doc/global-registrar/).
+
+Adapt your README accordingly.
+
+Contact me.
 
 # Need help or missing a feature?
 Feel free to contact me via [xl9jthv_7bvgakv9o9wg0jabn2ylm91xxrzzgt0e@firstdorsal.eu](mailto:xl9jthv_7bvgakv9o9wg0jabn2ylm91xxrzzgt0e@firstdorsal.eu) in english or german
