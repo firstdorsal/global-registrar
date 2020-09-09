@@ -1,6 +1,6 @@
 {
     "name": "global-registrar",
-    "version": "1.0.1",
+    "version": "1.0.3",
     "description": "Easy access to multiple registrar APIs.",
     "main": "index.js",
     "scripts": {

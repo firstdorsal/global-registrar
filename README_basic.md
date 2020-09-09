@@ -11,7 +11,7 @@ The plugins for the different APIs shall recreate the same effects with the same
 Look at the plugins pages to see what data needs to be provided.
 
 # Supported APIs
-**name<span>.</span>com** - [global-registrar-plugin-gandi](https://www.npmjs.com/package/global-registrar-plugin-namecom)
+**name<span>.</span>com** - [global-registrar-plugin-namecom](https://www.npmjs.com/package/global-registrar-plugin-namecom)
 
 - Missing 
     - **listAvailableTLD()**  *Not supported by name<span>.</span>com*
@@ -26,7 +26,7 @@ Look at the plugins pages to see what data needs to be provided.
 - Provide following plugin data:
     -  **apikey**
 
-**Godaddy** - [global-registrar-plugin-gandi](https://www.npmjs.com/package/global-registrar-plugin-godaddy)
+**Godaddy** - [global-registrar-plugin-godaddy](https://www.npmjs.com/package/global-registrar-plugin-godaddy)
 - Missing 
     - **registerDomain()**  *Not implemented: overcomplicated*
     - **setDNSSEC()**  *Not supported by Godaddy*
