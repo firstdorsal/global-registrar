@@ -95,7 +95,7 @@ You can use this template:
 
 **2** - Clone the repository by using this command (**WITH THE DOT AT THE END**)
 ```bash
-git clone http://git.firstdorsal.eu/firstdorsal/global-registrar-plugin.git .
+git clone https://git.firstdorsal.eu/firstdorsal/global-registrar-plugin.git .
 ```
 
 **3** - If you have bash installed run: 
