@@ -11,7 +11,7 @@ The plugins for the different APIs shall recreate the same effects with the same
 Look at the plugins pages to see what data needs to be provided.
 
 # Supported APIs
-**name<span>.</span>com** - [global-registrar-plugin-gandi](https://www.npmjs.com/package/global-registrar-plugin-namecom)
+**name<span>.</span>com** - [global-registrar-plugin-namecom](https://www.npmjs.com/package/global-registrar-plugin-namecom)
 
 - Missing 
     - **listAvailableTLD()**  *Not supported by name<span>.</span>com*
@@ -26,7 +26,7 @@ Look at the plugins pages to see what data needs to be provided.
 - Provide following plugin data:
     -  **apikey**
 
-**Godaddy** - [global-registrar-plugin-gandi](https://www.npmjs.com/package/global-registrar-plugin-godaddy)
+**Godaddy** - [global-registrar-plugin-godaddy](https://www.npmjs.com/package/global-registrar-plugin-godaddy)
 - Missing 
     - **registerDomain()**  *Not implemented: overcomplicated*
     - **setDNSSEC()**  *Not supported by Godaddy*
@@ -95,7 +95,7 @@ You can use this template:
 
 **2** - Clone the repository by using this command (**WITH THE DOT AT THE END**)
 ```bash
-git clone https://git.firstdorsal.eu/firstdorsal/global-registrar-plugin.git .
+git clone http://git.firstdorsal.eu/firstdorsal/global-registrar-plugin.git .
 ```
 
 **3** - If you have bash installed run: 
@@ -109,6 +109,8 @@ If not: replace the string PLUGINNAME manually with the name of your service in 
 **4** - Replace the author field with your name
 
 **4.1** - Replace the repository url with your own git repository url 
+
+**4.1** - Remove the "Need help or missing a feature part" from the README or replace it with you own contact details
 
 **5** - Create your plugin 
 
