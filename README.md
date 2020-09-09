@@ -110,8 +110,6 @@ If not: replace the string PLUGINNAME manually with the name of your service in 
 
 **4.1** - Replace the repository url with your own git repository url 
 
-**4.1** - Remove the "Need help or missing a feature part" from the README or replace it with you own contact details
-
 **5** - Create your plugin 
 
 **6** - To get you plugin listed here
