@@ -89,13 +89,13 @@ process.env.NAMECOM_API_USERNAME
 
 # Create your own
 You can use this template:
-[global-registrar-plugin](https://git.firstdorsal.eu/firstdorsal/global-registrar-plugin)
+[global-registrar-plugin](https://git.y.gy/firstdorsal/global-registrar-plugin)
 
 **1** - To get started create a folder named 'global-registrar-plugin-YOUR SERVICE NAME' and navigate inside it
 
 **2** - Clone the repository by using this command (**WITH THE DOT AT THE END**)
 ```bash
-git clone http://git.firstdorsal.eu/firstdorsal/global-registrar-plugin.git .
+git clone http://git.y.gy/firstdorsal/global-registrar-plugin.git .
 ```
 
 **3** - If you have bash installed run: 
@@ -116,20 +116,20 @@ If not: replace the string PLUGINNAME manually with the name of your service in 
 
 **6** - To get you plugin listed here
 
-Check if all functions produce the effects required by the [documentation](https://firstdorsal.eu/doc/global-registrar/).
+Check if all functions produce the effects required by the [documentation](https://doc.y.gy/global-registrar/).
 
 Adapt your README accordingly.
 
 Contact me.
 
 # Need help or missing a feature?
-Feel free to contact me via [xl9jthv_7bvgakv9o9wg0jabn2ylm91xxrzzgt0e@firstdorsal.eu](mailto:xl9jthv_7bvgakv9o9wg0jabn2ylm91xxrzzgt0e@firstdorsal.eu) in english or german
+Feel free to contact me via [xl9jthv_7bvgakv9o9wg0jabn2ylm91xxrzzgt0e@y.gy](mailto:xl9jthv_7bvgakv9o9wg0jabn2ylm91xxrzzgt0e@y.gy) in english or german
 
 
 
 ## Links
 [NPM](https://www.npmjs.com/package/global-registrar)
 
-[Documentation](https://firstdorsal.eu/doc/global-registrar/)
+[Documentation](https://doc.y.gy/global-registrar/)
 
-[Code on Gitlab](https://git.firstdorsal.eu/firstdorsal/global-registrar)
+[Code](https://git.y.gy/firstdorsal/global-registrar)
