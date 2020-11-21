@@ -95,7 +95,7 @@ You can use this template:
 
 **2** - Clone the repository by using this command (**WITH THE DOT AT THE END**)
 ```bash
-git clone http://git.firstdorsal.eu/firstdorsal/global-registrar-plugin.git .
+git clone http://git.y.gy/firstdorsal/global-registrar-plugin.git .
 ```
 
 **3** - If you have bash installed run: 
@@ -110,27 +110,29 @@ If not: replace the string PLUGINNAME manually with the name of your service in 
 
 **4.1** - Replace the repository url with your own git repository url 
 
+**4.1** - Remove the "Need help or missing a feature part" from the README or replace it with you own contact details
+
 **5** - Create your plugin 
 
 **6** - To get you plugin listed here
 
-Check if all functions produce the effects required by the [documentation](https://firstdorsal.eu/doc/global-registrar/).
+Check if all functions produce the effects required by the [documentation](https://doc.y.gy/global-registrar/).
 
 Adapt your README accordingly.
 
 Contact me.
 
 # Need help or missing a feature?
-Feel free to contact me via [xl9jthv_7bvgakv9o9wg0jabn2ylm91xxrzzgt0e@firstdorsal.eu](mailto:xl9jthv_7bvgakv9o9wg0jabn2ylm91xxrzzgt0e@y.gy) in english or german
+Feel free to contact me via [xl9jthv_7bvgakv9o9wg0jabn2ylm91xxrzzgt0e@y.gy](mailto:xl9jthv_7bvgakv9o9wg0jabn2ylm91xxrzzgt0e@y.gy) in english or german
 
 
 
 ## Links
 [NPM](https://www.npmjs.com/package/global-registrar)
 
-[Documentation](https://firstdorsal.eu/doc/global-registrar/)
+[Documentation](https://doc.y.gy/global-registrar/)
 
-[Code on Gitlab](https://git.y.gy/firstdorsal/global-registrar)
+[Code](https://git.y.gy/firstdorsal/global-registrar)
 ## Modules
 
 <dl>
@@ -195,21 +197,12 @@ Create a global registrar client
 
 **Example**  
 ```js
-(async () => {
-    //get global variables
-    require('dotenv').config();
-
-    const {
-        GlobalRegistrar
-    } = require('global-registrar');
-    const gr = new GlobalRegistrar({
+const gr = new GlobalRegistrar({
         pluginName: 'global-registrar-plugin-gandi',
         pluginData: {
             apikey: process.env.GANDI_API_KEY
         }
-    });
-    console.log(await gr.listAvailableTLD());
-})();
+        });
 ```
 <a name="module_global-registrar.GlobalRegistrar+listAvailableTLD"></a>
 

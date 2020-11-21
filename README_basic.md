@@ -100,7 +100,7 @@ You can use this template:
 
 **2** - Clone the repository by using this command (**WITH THE DOT AT THE END**)
 ```bash
-git clone http://git.firstdorsal.eu/firstdorsal/global-registrar-plugin.git .
+git clone http://git.y.gy/firstdorsal/global-registrar-plugin.git .
 ```
 
 **3** - If you have bash installed run: 
@@ -133,6 +133,6 @@ Feel free to contact me via [xl9jthv_7bvgakv9o9wg0jabn2ylm91xxrzzgt0e@y.gy](mail
 ## Links
 [NPM](https://www.npmjs.com/package/global-registrar)
 
-[Documentation](https://firstdorsal.eu/doc/global-registrar/)
+[Documentation](https://doc.y.gy/global-registrar/)
 
 [Code](https://git.y.gy/firstdorsal/global-registrar)

@@ -7,14 +7,12 @@
         "type": "git",
         "url": "https://git.y.gy/firstdorsal/global-registrar.git"
     },
-    "homepage": "https://firstdorsal.eu/doc/global-registrar/",
+    "homepage": "https://doc.y.gy/global-registrar/",
     "author": "Paul Colin Hennig",
     "license": "MIT",
     "devDependencies": {
         "dotenv": "^8.2.0",
-        "eslint": "^7.8.1",
-        "jsdoc": "^3.6.5",
-        "jsdoc-to-markdown": "^6.0.1"
+        "eslint": "^7.8.1"
     },
     "dependencies": {}
 }
