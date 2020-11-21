@@ -88,6 +88,10 @@ module.exports.GlobalRegistrar = class {
         const Plugin = require(plugin.pluginName);
         this.plugin = new Plugin(plugin.pluginData);
     }
+    init = () => {
+        return this.plugin.init()
+    }
+
     /**
      * Retrieves list of available tld names. Must return array with all available tld endings and nothing else.
      * @returns {Array} Array of top level domains
