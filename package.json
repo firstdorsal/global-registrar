@@ -1,14 +1,11 @@
 {
     "name": "global-registrar",
-    "version": "1.0.3",
+    "version": "1.0.8",
     "description": "Easy access to multiple registrar APIs.",
     "main": "index.js",
-    "scripts": {
-        "makedoc": "./generateDoc.sh"
-    },
     "repository": {
         "type": "git",
-        "url": "https://git.firstdorsal.eu/firstdorsal/global-registrar.git"
+        "url": "https://git.y.gy/firstdorsal/global-registrar.git"
     },
     "homepage": "https://firstdorsal.eu/doc/global-registrar/",
     "author": "Paul Colin Hennig",
