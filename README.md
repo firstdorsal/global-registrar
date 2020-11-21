@@ -1,5 +1,5 @@
 # Global Registrar
-<img draggable="none" src="https://git.y.gy/firstdorsal/global-registrar/-/raw/master/logo.jpg" style="float:left; margin-right:10px;" height="100"> 
+<img draggable="none" src="https://git.y.gy/firstdorsal/global-registrar/-/raw/master/logo.jpg" align="left" style="margin-right:10px;" height="100"> 
 
 ## The goal of global-registrar is to create an easy reusable interface for multiple registrar APIs as most registrar APIs are poorly documented and/or difficult to access. The plugins for the different APIs shall recreate the same effects with the same functions. Look at the plugins pages to see what data needs to be provided.
 
