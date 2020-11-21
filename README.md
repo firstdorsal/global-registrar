@@ -1,14 +1,19 @@
+# Global Registrar
+<img draggable="none" src="https://git.y.gy/firstdorsal/global-registrar/-/raw/master/logo.jpg" style="float:left; margin-right:10px;" height="100"> 
+
+## The goal of global-registrar is to create an easy reusable interface for multiple registrar APIs as most registrar APIs are poorly documented and/or difficult to access. The plugins for the different APIs shall recreate the same effects with the same functions. Look at the plugins pages to see what data needs to be provided.
+
+[![npm](https://ico.y.gy/npm/dm/global-registrar?style=flat-square&logo=npm)](https://www.npmjs.com/package/global-registrar)
+[![NPM](https://ico.y.gy/npm/l/global-registrar?style=flat-square&color=brightgreen)](https://www.npmjs.com/package/global-registrar)
+[![Snyk Vulnerabilities for npm package](https://ico.y.gy/snyk/vulnerabilities/npm/global-registrar?style=flat-square&logo=snyk)](https://snyk.io/test/npm/global-registrar)
+[![Website](https://ico.y.gy/website?down_color=red&down_message=offline&label=documentation&up_color=success&up_message=online&url=https%3A%2F%2Fdoc.y.gy%2Fglobal-registrar&style=flat-square)](https://doc.y.gy/global-registrar/)
+[![Website](https://ico.y.gy/website?down_color=red&down_message=offline&label=repository&up_color=success&up_message=online&url=https%3A%2F%2Fgit.y.gy%2Ffirstdorsal%2Fglobal-registrar&style=flat-square&logo=gitlab)](https://git.y.gy/firstdorsal/global-registrar/)
+
+
 # Install
 ```
 npm i global-registrar
 ```
-
-# Description
-The goal of global-registrar is to create an easy reusable interface for multiple registrar APIs as most registrar APIs are poorly documented and/or difficult to access. 
-
-The plugins for the different APIs shall recreate the same effects with the same functions.
-
-Look at the plugins pages to see what data needs to be provided.
 
 # Supported APIs
 **name<span>.</span>com** - [global-registrar-plugin-namecom](https://www.npmjs.com/package/global-registrar-plugin-namecom)
@@ -109,8 +114,6 @@ If not: replace the string PLUGINNAME manually with the name of your service in 
 **4** - Replace the author field with your name
 
 **4.1** - Replace the repository url with your own git repository url 
-
-**4.1** - Remove the "Need help or missing a feature part" from the README or replace it with you own contact details
 
 **5** - Create your plugin 
 
