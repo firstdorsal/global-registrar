@@ -1,3 +1,4 @@
+**This is a mirror of [git.y.gy/firstdorsal/global-registrar](https://git.y.gy/firstdorsal/global-registrar)**
 # Global Registrar
 <img draggable="none" src="https://git.y.gy/firstdorsal/global-registrar/-/raw/master/logo.jpg" style="float:left; margin-right:10px;" height="100"> 
 
@@ -200,12 +201,21 @@ Create a global registrar client
 
 **Example**  
 ```js
-const gr = new GlobalRegistrar({
+(async () => {
+    //get global variables
+    require('dotenv').config();
+
+    const {
+        GlobalRegistrar
+    } = require('global-registrar');
+    const gr = new GlobalRegistrar({
         pluginName: 'global-registrar-plugin-gandi',
         pluginData: {
             apikey: process.env.GANDI_API_KEY
         }
-        });
+    });
+    console.log(await gr.listAvailableTLD());
+})();
 ```
 <a name="module_global-registrar.GlobalRegistrar+listAvailableTLD"></a>
 
