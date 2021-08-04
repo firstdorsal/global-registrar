@@ -200,12 +200,21 @@ Create a global registrar client
 
 **Example**  
 ```js
-const gr = new GlobalRegistrar({
+(async () => {
+    //get global variables
+    require('dotenv').config();
+
+    const {
+        GlobalRegistrar
+    } = require('global-registrar');
+    const gr = new GlobalRegistrar({
         pluginName: 'global-registrar-plugin-gandi',
         pluginData: {
             apikey: process.env.GANDI_API_KEY
         }
-        });
+    });
+    console.log(await gr.listAvailableTLD());
+})();
 ```
 <a name="module_global-registrar.GlobalRegistrar+listAvailableTLD"></a>
 
