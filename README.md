@@ -1,3 +1,4 @@
+**This is a mirror of [git.y.gy/firstdorsal/global-registrar](https://git.y.gy/firstdorsal/global-registrar)**
 # Global Registrar
 <img draggable="none" src="https://git.y.gy/firstdorsal/global-registrar/-/raw/master/logo.jpg" style="float:left; margin-right:10px;" height="100"> 
 
